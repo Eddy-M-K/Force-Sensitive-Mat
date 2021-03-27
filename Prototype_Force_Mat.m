@@ -29,7 +29,6 @@ zInput = 'A0';
 configurePin(a, zInput, 'AnalogInput');
 
 matrix = zeros(8,8);
-row = zeros(1,8);
 
 % LOOP
 %====================================
