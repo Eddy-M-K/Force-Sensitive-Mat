@@ -7,7 +7,7 @@ format default
 %SETUP
 %====================================
 
-a = arduino('COM4', 'Uno');
+a = arduino('COM3', 'Uno'); % Change port number to the one used
 
 Mux1 = {'D10', 'D9', 'D8'};
 for i=1:3 
@@ -52,8 +52,8 @@ while (true)
                 end
             end
             inputValue = readVoltage(a, 'A0');
-            matrix(8-row,column+1) = inputValue;
-            h = heatmap(matrix, 'ColorLimits',[0 5], 'XLabel', '2nd Multiplexer Wires', 'CellLabelColor','none', 'Title', 'Prototype Force Mat');
+            matrix(8-row,8-column) = inputValue;
+            h = heatmap(matrix, 'ColorLimits',[0 5], 'CellLabelColor','none', 'Title', 'Prototype Force Mat');
             drawnow
         end
     end
